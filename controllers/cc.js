@@ -6,13 +6,10 @@ const getTodo = asyncHandler(async (req, res) => {
 });
 const postTodo = asyncHandler(async (req, res) => {
   
-  const { title,completion} = req.body;
-  // if (!title || !completion) {
-  //   res.status(400);
-  //   throw new Error("all fields are mandatory");
-  // }
+  const { title,completed} = req.body;
+  
   console.log("post")
-  const list = await Todo.create({ title,completion}).then((data)=>{
+  const list = await Todo.create({ title,completed}).then((data)=>{
     console.log("data is added");
     console.log(data);
     res.send(data);
@@ -25,8 +22,8 @@ const deleteTodo = asyncHandler(async (req, res) => {
   
 });
 const putTodo = asyncHandler(async (req, res) => {
-  const {title,completion}=req.body
-  Todo.findByIdAndUpdate(req.params.id,{title,completion}).then(()=>res.send("updated"))
+  const {title,completed}=req.body
+  Todo.findByIdAndUpdate(req.params.id,{title,completed}).then(()=>res.send("updated"))
   
 });
 

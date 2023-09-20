@@ -25,7 +25,7 @@ app.listen(port,()=>{
 cron.schedule(' 0 0 * * * ',async()=>{
     try {
         // Find and delete completed tasks
-        const result = await Todo.deleteMany({ completion: true });
+        const result = await Todo.deleteMany({ completed: true });
     
         console.log(`Cron job ran at ${new Date()}`);
         console.log(`Deleted ${result.deletedCount} completed tasks.`);

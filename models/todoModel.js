@@ -8,7 +8,7 @@ const TodoSchema = mongoose.Schema(
       require:true
       
     },
-    completion:{
+    completed:{
       type: Boolean,
       require :true
     }
