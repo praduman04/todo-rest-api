@@ -3,7 +3,7 @@ const {Router} =require("express")
 
 const router= Router()
 
-const{getTodo,putTodo,deleteTodo,postTodo,getsTodo} =require("../controllers/cc");
+const{getTodo,putTodo,deleteTodo,postTodo,getsTodo} =require("../controllers/controllers");
 
 router.get('/',getTodo);
 router.post('/save',postTodo)
